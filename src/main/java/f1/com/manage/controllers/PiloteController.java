@@ -19,6 +19,7 @@ public class PiloteController {
     @GetMapping("/pilote")
     public String getAllPilote(PiloteModel piloteModel){
         List<PiloteModel> pilote = piloteRepository.findAll();
+        return "";
     }
 
 }
