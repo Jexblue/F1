@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 
-    <div>Pilote</div>
+    <div>Pilote est la</div>
+
+    <tr th:each="pilote : ${pilotes}">
+        <td th:text="${pilotes.firstName}">First name</td>
+        <td th:text="${pilotes.abrv}">Abreviation</td>
+    </tr>
 
 </body>
 </html>
