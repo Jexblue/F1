@@ -9,8 +9,8 @@
     <div>Pilote est la</div>
 
     <tr th:each="pilote : ${pilotes}">
-        <td th:text="${pilotes.firstName}">First name</td>
-        <td th:text="${pilotes.abrv}">Abreviation</td>
+        <td th:text="${pilote.firstName}">First name</td>
+        <td th:text="${pilote.abrv}">Abreviation</td>
     </tr>
 
 </body>
