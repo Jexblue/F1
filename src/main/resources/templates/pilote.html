@@ -7,11 +7,12 @@
 <body>
 
     <div>Pilote est la</div>
-
-    <tr th:each="pilote : ${pilotes}">
-        <td th:text="${pilote.firstName}">First name</td>
-        <td th:text="${pilote.abrv}">Abreviation</td>
-    </tr>
-
+    <table>
+        <tr th:each="pilote : ${pilotes}">
+            <td th:text="${pilote.firstName}">First name</td>
+            <td th:text="${pilote.abrv}">Abreviation</td>
+            <td><button type="button">Update</button></td>
+        </tr>
+    </table>
 </body>
 </html>
