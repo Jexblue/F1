@@ -28,7 +28,6 @@ public class PiloteController {
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         // model.addAttribute("name", name);
         List<PiloteModel> pilotes = piloteRepository.findAll();
-
         model.addAttribute("pilote", pilotes);
         return "pilote";
     }*/
@@ -36,7 +35,7 @@ public class PiloteController {
     @RequestMapping(value = "pilote", method = RequestMethod.GET)
     public String messages(Model model){
         model.addAttribute("pilotes", piloteRepository.findAll());
-        return "pilote/listPilote";
+        return "pilote";
     }
 
 }
