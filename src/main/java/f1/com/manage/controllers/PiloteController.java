@@ -18,20 +18,6 @@ public class PiloteController {
     @Autowired
     PiloteRepository piloteRepository;
 
-    /*@GetMapping("/pilote")
-    public String getAllPilote(PiloteModel piloteModel){
-        List<PiloteModel> pilote = piloteRepository.findAll();
-        return "";
-    }*/
-
-    /*@GetMapping("/pilote")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-        // model.addAttribute("name", name);
-        List<PiloteModel> pilotes = piloteRepository.findAll();
-        model.addAttribute("pilote", pilotes);
-        return "pilote";
-    }*/
-
     @RequestMapping(value = "pilote", method = RequestMethod.GET)
     public String messages(Model model){
         model.addAttribute("pilotes", piloteRepository.findAll());
