@@ -17,6 +17,9 @@ public class EcurieModel {
     @Column(name = "nameecurie")
     String nameEcurie;
 
+    public EcurieModel() {
+    }
+
     public EcurieModel(Integer idEcurie, Float budget, String nameEcurie) {
         this.idEcurie = idEcurie;
         this.budget = budget;
