@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Scuderia</title>
+</head>
+<body>
+    <h3>List of scuderia</h3>
+    <a th:href="@{/addEcurie}">Create a new Scuderia</a></br></br>
+    <table>
+        <thead>
+            <tr>
+                <th>Scuderia</th>
+                <th>Budget</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ecurie : ${ecuries}">
+                <td th:text="${ecurie.nameEcurie}"></td>
+                <td th:text="${ecurie.budget}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
