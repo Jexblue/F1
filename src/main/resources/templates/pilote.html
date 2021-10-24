@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 
-    <div>Pilote est la</div>
+    <h3>List of pilotes</h3>
     <table>
-        <tr th:each="pilote : ${pilotes}">
-            <td th:text="${pilote.firstName}">First name</td>
-            <td th:text="${pilote.abrv}">Abreviation</td>
-            <td><button type="button">Update</button></td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Abreviation</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="pilote : ${pilotes}">
+                <td th:text="${pilote.firstName}">First name</td>
+                <td th:text="${pilote.abrv}">Abreviation</td>
+                <td th:text="${pilote.numero}">Numero</td>
+                <td><button type="button">Update</button></td>
+            </tr>
+        </tbody>
     </table>
-    <h2>Create a pilote</h2>
+    <a href="@{/addPiloteForm}">Add a new pilote</a>
 </body>
 </html>
