@@ -9,8 +9,8 @@
     <form th:action = "@{/saveEcurie}" th:object = "${ecurie}" method="POST">
         <input type="text" th:field = "*{nameEcurie}" placeholder="Enter scuderia name">
         <input type="number" th:field = "*{budget}" placeholder="Enter budget">
-        <button type="submit">Save</button>
         <input type="hidden" th:field = "*{idEcurie}">
+        <button type="submit">Save</button>
     </form>
 </body>
 </html>
