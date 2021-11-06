@@ -30,9 +30,9 @@ public class EcurieController {
 
     @PostMapping("/saveEcurie")
     public String saveEcurie(@ModelAttribute EcurieModel ecurieModel){
-        System.out.println("Ecurie name: "+ecurieModel.getNameEcurie()+" ecurie id: "+ecurieModel.getIdEcurie());
-        ecurieModel.setIdEcurie(11);
-        System.out.println("Ambany -> Ecurie name: "+ecurieModel.getNameEcurie()+" ecurie id: "+ecurieModel.getIdEcurie());
+        //System.out.println("Ecurie name: "+ecurieModel.getNameEcurie()+" ecurie id: "+ecurieModel.getIdEcurie());
+        //ecurieModel.setIdEcurie(11);
+        //System.out.println("Ambany -> Ecurie name: "+ecurieModel.getNameEcurie()+" ecurie id: "+ecurieModel.getIdEcurie());
         ecurieRepository.save(ecurieModel);
         return "redirect:/ecurie";
     }
