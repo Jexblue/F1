@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fan</title>
+</head>
+<body>
+    <h3>List of fans</h3>
+    <a th:href="@{/addFan}">Create an account</a><br>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>First Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each = "fan: ${fans}">
+                <td th:text = "${fan.nameFan}"></td>
+                <td th:text = "${fan.firstNameFan}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
