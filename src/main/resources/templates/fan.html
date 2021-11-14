@@ -18,6 +18,7 @@
             <tr th:each = "fan: ${fans}">
                 <td th:text = "${fan.nameFan}"></td>
                 <td th:text = "${fan.firstNameFan}"></td>
+                <td><a th:href="@{updateFan(idFan = ${fan.idFan})}">Update</a></td>
             </tr>
         </tbody>
     </table>
