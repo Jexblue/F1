@@ -41,4 +41,12 @@ public class FanController {
         return "redirect:/fan";
     }
 
+    @GetMapping("/updateFan")
+    public ModelAndView updateFan(@RequestParam Integer idFan){
+        ModelAndView mav = new ModelAndView("add-fan");
+        FanModel fanModel = fanRepository.findById(idFan).get();
+        mav.addObject("fan", fanModel);
+        return mav;
+    }
+
 }
