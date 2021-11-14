@@ -1,12 +1,11 @@
 package f1.com.manage.controllers;
 
+import f1.com.manage.models.FanModel;
 import f1.com.manage.repositories.FanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -26,6 +25,20 @@ public class FanController {
     public String getAllFan(Model model){
         model.addAttribute("fans", fanRepository.findAll());
         return "fan";
+    }
+
+    @GetMapping("/addFan")
+    public ModelAndView addFan(){
+        ModelAndView mav = new ModelAndView("add-fan");
+        FanModel fanModel = new FanModel();
+        mav.addObject("fan", fanModel);
+        return mav;
+    }
+
+    @PostMapping("/saveFan")
+    public String saveFan(@ModelAttribute FanModel fanModel){
+        fanRepository.save(fanModel);
+        return "redirect:/fan";
     }
 
 }
