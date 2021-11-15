@@ -8,6 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+import java.util.Optional;
+
 @Controller
 public class FanController {
 
@@ -47,6 +50,13 @@ public class FanController {
         FanModel fanModel = fanRepository.findById(idFan).get();
         mav.addObject("fan", fanModel);
         return mav;
+    }
+
+    @GetMapping("/deleteFan")
+    public String deleteFan(@RequestParam Integer idFan){
+        FanModel fanModel = fanRepository.findById(idFan).get();
+        fanRepository.delete(fanModel);
+        return "redirect:/fan";
     }
 
 }
