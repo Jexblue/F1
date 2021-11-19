@@ -2,6 +2,7 @@ package f1.com.manage.repositories;
 
 import f1.com.manage.models.EcurieModel;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
