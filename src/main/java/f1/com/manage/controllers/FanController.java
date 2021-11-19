@@ -52,10 +52,11 @@ public class FanController {
         return mav;
     }
 
-    /*@PostMapping("updateFan2")
+    @PostMapping("updateFan2")
     public String updateFan2(@ModelAttribute FanModel fanModel){
-        fanRepository.update()
-    }*/
+        fanRepository.save(fanModel);
+        return "redirect:/fan";
+    }
 
     @GetMapping("/deleteFan")
     public String deleteFan(@RequestParam Integer idFan){
