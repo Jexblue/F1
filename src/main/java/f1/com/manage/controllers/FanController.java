@@ -59,4 +59,6 @@ public class FanController {
         return "redirect:/fan";
     }
 
+    public void test(){}
+
 }
