@@ -46,11 +46,16 @@ public class FanController {
 
     @GetMapping("/updateFan")
     public ModelAndView updateFan(@RequestParam Integer idFan){
-        ModelAndView mav = new ModelAndView("add-fan");
+        ModelAndView mav = new ModelAndView("update-fan");
         FanModel fanModel = fanRepository.findById(idFan).get();
         mav.addObject("fan", fanModel);
         return mav;
     }
+
+    /*@PostMapping("updateFan2")
+    public String updateFan2(@ModelAttribute FanModel fanModel){
+        fanRepository.update()
+    }*/
 
     @GetMapping("/deleteFan")
     public String deleteFan(@RequestParam Integer idFan){
@@ -58,7 +63,5 @@ public class FanController {
         fanRepository.delete(fanModel);
         return "redirect:/fan";
     }
-
-    public void test(){}
 
 }
