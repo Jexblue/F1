@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update your info</title>
+</head>
+<body>
+<h3>Create a new account</h3>
+<form th:action = "@{/updateFan2}" th:object = "${fan}" method="POST">
+    <input type="text" th:field = "*{nameFan}" placeholder="Name"><br>
+    <input type="text" th:field = "*{firstNameFan}" placeholder="First Name"></br>
+    <input type="password" th:field="*{password}" placeholder="Password"></br>
+    <input type="hidden" th:field="*{idFan}" placeholder="id"></br>
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>
