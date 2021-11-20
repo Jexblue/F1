@@ -6,10 +6,10 @@
 </head>
 <body>
 <h3>Create a new account</h3>
-<form th:action = "@{/updateFan2}" th:object = "${fan}" method="POST">
+<form th:action = "@{/saveUpdateFan}" th:object = "${fan}" method="POST">
     <input type="text" th:field = "*{nameFan}" placeholder="Name"><br>
     <input type="text" th:field = "*{firstNameFan}" placeholder="First Name"></br>
-    <input type="password" th:field="*{password}" placeholder="Password"></br>
+    <input type="hidden" th:field="*{password}" placeholder="Password">
     <input type="hidden" th:field="*{idFan}" placeholder="id"></br>
     <button type="submit">Update</button>
 </form>
