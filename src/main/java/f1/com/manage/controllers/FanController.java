@@ -52,7 +52,7 @@ public class FanController {
         return mav;
     }
 
-    @PostMapping("updateFan2")
+    @PostMapping("saveUpdateFan")
     public String updateFan2(@ModelAttribute FanModel fanModel){
         fanRepository.save(fanModel);
         return "redirect:/fan";
