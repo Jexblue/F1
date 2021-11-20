@@ -53,7 +53,7 @@ public class FanController {
     }
 
     @PostMapping("saveUpdateFan")
-    public String updateFan2(@ModelAttribute FanModel fanModel){
+    public String saveUpdateFan(@ModelAttribute FanModel fanModel){
         fanRepository.save(fanModel);
         return "redirect:/fan";
     }
