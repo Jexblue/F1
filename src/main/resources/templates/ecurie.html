@@ -18,6 +18,8 @@
             <tr th:each="ecurie : ${ecuries}">
                 <td th:text="${ecurie.nameEcurie}"></td>
                 <td th:text="${ecurie.budget}"></td>
+                <td><a th:href="@{updateEcurie(idEcurie = ${ecurie.idEcurie})}">Update</a></td>
+                <td><a th:href="@{deleteEcurie(idEcurie = ${ecurie.idEcurie})}">Delete</a></td>
             </tr>
         </tbody>
     </table>
