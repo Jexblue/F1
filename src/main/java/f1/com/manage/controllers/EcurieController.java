@@ -1,6 +1,7 @@
 package f1.com.manage.controllers;
 
 import f1.com.manage.models.EcurieModel;
+import f1.com.manage.models.FanModel;
 import f1.com.manage.repositories.EcurieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,6 +35,27 @@ public class EcurieController {
         //ecurieModel.setIdEcurie(11);
         //System.out.println("Ambany -> Ecurie name: "+ecurieModel.getNameEcurie()+" ecurie id: "+ecurieModel.getIdEcurie());
         ecurieRepository.save(ecurieModel);
+        return "redirect:/ecurie";
+    }
+
+    @GetMapping("updateEcurie")
+    public ModelAndView updateEcurie(@RequestParam Integer idEcurie){
+        ModelAndView mav = new ModelAndView("update-ecurie");
+        EcurieModel ecurieModel = ecurieRepository.findById(idEcurie).get();
+        mav.addObject("ecurie", ecurieModel);
+        return mav;
+    }
+
+    @PostMapping("saveUpdateEcurie")
+    public String saveUpdateEcurie(@ModelAttribute EcurieModel ecurieModel){
+        ecurieRepository.save(ecurieModel);
+        return "redirect:/ecurie";
+    }
+
+    @GetMapping("deleteEcurie")
+    public String deleteEcurie(@RequestParam Integer idEcurie){
+        EcurieModel ecurieModel = ecurieRepository.findById(idEcurie).get();
+        ecurieRepository.delete(ecurieModel);
         return "redirect:/ecurie";
     }
 
