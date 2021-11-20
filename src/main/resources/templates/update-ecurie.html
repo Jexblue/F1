@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update scuderia</title>
+</head>
+<body>
+    <h3>Update scuderia info</h3>
+    <form th:action = "@{/saveUpdateEcurie}" th:object = "${ecurie}" method="POST">
+        <input type="text" th:field = "*{nameEcurie}" placeholder="Enter scuderia name"></br>
+        <input type="number" th:field = "*{budget}" placeholder="Enter budget">
+        <input type="hidden" th:field = "*{idEcurie}">
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
